@@ -3,20 +3,6 @@ import styled, { keyframes } from "styled-components";
 import Rellax from "rellax";
 import BigImageAnim from "./BigImageAnim";
 
-const GridBox = styled.div`
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    height: ${({ height }) => height};
-    overflow: hidden;
-`;
-
-const Headline = styled.div`
-    grid-column: 2 / 8;
-    grid-row: 1;
-    z-index: 2;
-    align-self: center;
-`;
-
 const morph = keyframes`
     0%{
         border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
@@ -33,6 +19,43 @@ const spin = keyframes`
     100%{
         transform: rotate(360deg);
     }
+`;
+
+const fadeInRight = keyframes`
+    from {
+        opacity: 0;
+        transform: translateX(-2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+`;
+
+const fadeInUp = keyframes`
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+`;
+
+const GridBox = styled.div`
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    height: ${({ height }) => height};
+    //overflow: hidden;
+`;
+
+const Headline = styled.div`
+    grid-column: 2 / 8;
+    grid-row: 1;
+    z-index: 2;
+    align-self: center;
+    animation: ${fadeInRight} ease 0.4s forwards;
 `;
 
 const Blob = styled.div`
@@ -52,6 +75,9 @@ const Blob = styled.div`
     grid-row: 1;
     align-self: center;
     transform-style: preserve-3d;
+    opacity: 0;
+    animation: ${fadeInUp} ease 0.4s forwards;
+    animation-delay: 0.2s;
 `;
 
 const GradientBlob = styled(Blob)`
