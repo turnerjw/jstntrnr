@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
 import Rellax from "rellax";
+import { Parallax } from "react-scroll-parallax";
 import BigImageAnim from "./BigImageAnim";
 
 const morph = keyframes`
@@ -43,11 +44,20 @@ const fadeInUp = keyframes`
     }
 `;
 
+const growUp = keyframes`
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+`;
+
 const GridBox = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     height: ${({ height }) => height};
-    //overflow: hidden;
+    margin: ${({ verticalMargin }) => verticalMargin} 0;
 `;
 
 const Headline = styled.div`
@@ -67,24 +77,27 @@ const Blob = styled.div`
         will-change: border-radius, transform;
         transform-style: preserve-3d;
         transform: translateZ(0);
+        top: 50%;
+        left: 0.5rem;
     }
-    height: 15rem;
-    width: 15rem;
+    width: 100%;
+    height: 75%;
+    overflow: hidden;
     z-index: 1;
     grid-column: 9 / -1;
     grid-row: 1;
     align-self: center;
     transform-style: preserve-3d;
-    opacity: 0;
-    animation: ${fadeInUp} ease 0.4s forwards;
-    animation-delay: 0.2s;
+    //opacity: 0;
+    //animation: ${fadeInUp} ease 0.4s forwards;
+    //animation-delay: 0.2s;
 `;
 
 const GradientBlob = styled(Blob)`
-    padding-top: 2rem;
     ::before {
         height: 13rem;
         width: 13rem;
+        margin-top: -6.5rem;
         animation: ${morph} 4s infinite linear alternate,
             ${spin} 20s infinite linear;
         background: linear-gradient(
@@ -99,6 +112,7 @@ const BlueBlob = styled(Blob)`
     ::before {
         height: 15rem;
         width: 15rem;
+        margin-top: -7.5rem;
         animation: ${morph} 7s infinite linear alternate-reverse,
             ${spin} 25s infinite linear reverse;
         background: linear-gradient(
@@ -106,6 +120,45 @@ const BlueBlob = styled(Blob)`
             ${({ theme }) => theme.fg},
             ${({ theme }) => theme.blue} 60%
         );
+    }
+`;
+
+const Navbar = styled(GridBox)`
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    h3 {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        background: linear-gradient(
+            to top right,
+            ${({ theme }) => theme.fg},
+            ${({ theme }) => theme.blue}
+        );
+        color: ${({ theme }) => theme.bg};
+        justify-self: left;
+
+        font-variation-settings: "wght" 850;
+        margin: 1rem 0;
+        text-transform: uppercase;
+    }
+`;
+
+const VerticleBar = styled.div`
+    justify-self: center;
+    align-self: end;
+    height: 20rem;
+    ::before {
+        content: "";
+        position: absolute;
+        background: ${({ theme }) => theme.fg};
+        margin: 1rem;
+        width: 0.1rem;
+        height: 20rem;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        animation: ${growUp} ease 0.4s forwards;
+        animation-delay: 0.8s;
     }
 `;
 
@@ -123,12 +176,23 @@ const BigEmoji = styled.div`
 const FloatingBox = styled.div`
     z-index: 2;
     padding: 1rem;
-    grid-column: ${props => props.columnStart || 1} /
-        ${props => props.columnEnd || -1};
-    grid-row: 1 / -1;
-    align-self: center;
+    align-self: end;
     background: black;
     color: white;
+    grid-column: 2 / -2;
+    grid-row: 1 / -1;
+
+    @media (min-width: 1000px) {
+        grid-column: ${props => props.columnStart || 1} /
+            ${props => props.columnEnd || -1};
+        grid-row: 1 / -1;
+        align-self: center;
+    }
+`;
+
+const ParallaxGridItem = styled(Parallax)`
+    grid-column: ${props => props.columnStart || 1} /
+        ${props => props.columnEnd || -1};
 `;
 
 class ParallaxTest extends Component {
@@ -153,6 +217,7 @@ class ParallaxTest extends Component {
         return (
             <div>
                 <GridBox height="100vh">
+                    <VerticleBar className="rellax" data-rellax-speed="5" />
                     <Headline>
                         <h1>jstntrnr.com</h1>
                         <h3>
@@ -161,10 +226,15 @@ class ParallaxTest extends Component {
                             Welcome to my website.
                         </h3>
                     </Headline>
-                    <BlueBlob className="rellax" data-rellax-speed="3" />
-                    <GradientBlob className="rellax" data-rellax-speed="4" />
+                    <ParallaxGridItem columnStart="9" columnEnd="-1">
+                        <BlueBlob className="" data-rellax-speed="5" />
+                    </ParallaxGridItem>
+                    <GradientBlob className="" data-rellax-speed="6" />
                 </GridBox>
-                <GridBox>
+                <Navbar>
+                    <h3>jt</h3>
+                </Navbar>
+                <GridBox verticalMargin="3rem">
                     <BigImageAnim
                         src="/static/spvce.png"
                         columnStart="3"

@@ -20,11 +20,9 @@ const wipe = keyframes`
 `;
 
 const BigImage = styled.div`
-    margin: 5rem 0;
-    z-index: 1;
-    grid-column: ${props => props.columnStart || 1} /
-        ${props => props.columnEnd || -1};
+    grid-column: 1 / -1;
     grid-row: 1;
+    z-index: 1;
     perspective: 50rem;
     overflow: hidden;
     clip-path: polygon(0 0, 0 0, 20% 100%, 0% 100%);
@@ -32,6 +30,12 @@ const BigImage = styled.div`
     img {
         width: 100%;
         animation: ${props => (props.isVisible ? zoom : "")} 1s forwards ease;
+    }
+
+    @media (min-width: 1000px) {
+        grid-column: ${props => props.columnStart || 1} /
+            ${props => props.columnEnd || -1};
+        grid-row: 1;
     }
 `;
 

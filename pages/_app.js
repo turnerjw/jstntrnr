@@ -3,6 +3,7 @@ import App, { Container } from "next/app";
 import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const theme = {
     bg: "#F4F4F4",
@@ -80,9 +81,11 @@ export default class MyApp extends App {
                     />
                 </Head>
                 <GlobalStyle />
-                <ThemeProvider theme={theme}>
-                    <Component {...pageProps} />
-                </ThemeProvider>
+                <ParallaxProvider>
+                    <ThemeProvider theme={theme}>
+                        <Component {...pageProps} />
+                    </ThemeProvider>
+                </ParallaxProvider>
             </Container>
         );
     }
