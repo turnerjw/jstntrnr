@@ -190,11 +190,6 @@ const FloatingBox = styled.div`
     }
 `;
 
-const ParallaxGridItem = styled(Parallax)`
-    grid-column: ${props => props.columnStart || 1} /
-        ${props => props.columnEnd || -1};
-`;
-
 class ParallaxTest extends Component {
     constructor(props) {
         super(props);
@@ -226,10 +221,8 @@ class ParallaxTest extends Component {
                             Welcome to my website.
                         </h3>
                     </Headline>
-                    <ParallaxGridItem columnStart="9" columnEnd="-1">
-                        <BlueBlob className="" data-rellax-speed="5" />
-                    </ParallaxGridItem>
-                    <GradientBlob className="" data-rellax-speed="6" />
+                    <BlueBlob className="rellax" data-rellax-speed="5" />
+                    <GradientBlob className="rellax" data-rellax-speed="6" />
                 </GridBox>
                 <Navbar>
                     <h3>jt</h3>

@@ -1,7 +1,7 @@
 import React from "react";
 
 const rowElements = (children, rows) =>
-    children.map((child, index) =>
+    React.Children.map(children, (child, index) =>
         React.cloneElement(child, { rows: rows, key: index })
     );
 
