@@ -2,7 +2,10 @@ import React from "react";
 
 const rowElements = (children, rows) =>
     React.Children.map(children, (child, index) =>
-        React.cloneElement(child, { rows: rows, key: index })
+        React.cloneElement(child, {
+            rows: child.props.rows || rows,
+            key: index
+        })
     );
 
 const GridRow = ({ children, rows }) => <>{rowElements(children, rows)}</>;
