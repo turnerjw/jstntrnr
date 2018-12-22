@@ -26,10 +26,12 @@ const BigImage = styled.div`
     perspective: 50rem;
     overflow: hidden;
     clip-path: polygon(0 0, 0 0, 20% 100%, 0% 100%);
-    animation: ${props => (props.isVisible ? wipe : "")} 1s forwards ease;
+    animation: ${props => (props.isVisible ? wipe : "")} 1.2s forwards
+        cubic-bezier(0.23, 1, 0.32, 1);
     img {
         width: 100%;
-        animation: ${props => (props.isVisible ? zoom : "")} 1s forwards ease;
+        animation: ${props => (props.isVisible ? zoom : "")} 1s forwards
+            ease-out;
     }
 
     @media (min-width: 1000px) {
