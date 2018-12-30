@@ -1,5 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { Parallax } from "react-scroll-parallax";
+import { isMobile } from "react-device-detect";
 import BigImageAnim from "./BigImageAnim";
 import GridContainer from "./GridContainer";
 import GridItem from "./GridItem";
@@ -123,7 +124,11 @@ const TestGrid = () => (
                 smallAlignSelf="end"
                 zIndex="10"
             >
-                <Parallax offsetYMax={100} offsetYMin={-100}>
+                <Parallax
+                    disabled={isMobile}
+                    offsetYMax={100}
+                    offsetYMin={-100}
+                >
                     <BoldBox>
                         <h2>Red Pandas</h2>
                         <h3>They're pretty neat</h3>
@@ -199,7 +204,7 @@ const TestGrid = () => (
                 alignSelf="end"
                 zIndex="10"
             >
-                <Parallax offsetYMax={40} offsetYMin={-40}>
+                <Parallax disabled={isMobile} offsetYMax={40} offsetYMin={-40}>
                     <BoldBox>
                         <h2>Red Pandas</h2>
                         <h3>They're pretty neat</h3>
@@ -217,7 +222,11 @@ const TestGrid = () => (
                 alignSelf="center"
                 zIndex="10"
             >
-                <Parallax offsetYMax={100} offsetYMin={-100}>
+                <Parallax
+                    disabled={isMobile}
+                    offsetYMax={100}
+                    offsetYMin={-100}
+                >
                     <BoldBox>
                         <h2>Red Pandas</h2>
                         <h3>They're pretty neat</h3>
