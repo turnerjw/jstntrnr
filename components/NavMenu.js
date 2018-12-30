@@ -13,6 +13,19 @@ const Close = styled.div`
     cursor: pointer;
 `;
 
+const Burger = styled.div`
+    z-index: 100;
+    position: fixed;
+    transform: ${({ open }) =>
+        open ? "rotate(90deg) scale(0)" : "rotate(0) scale(1)"};
+    opacity: ${({ open }) => (open ? 0 : 1)};
+    padding: 1rem;
+    color: ${({ theme }) => theme.fg};
+    width: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+`;
+
 const NavItem = styled.div`
     margin: 2rem 0;
     h1 {
@@ -56,15 +69,6 @@ const NavBox = styled.div`
     }
 `;
 
-const Burger = styled.div`
-    z-index: 100;
-    position: fixed;
-    padding: 1rem;
-    color: ${({ theme }) => theme.fg};
-    width: 1.5rem;
-    cursor: pointer;
-`;
-
 class NavMenu extends Component {
     constructor(props) {
         super(props);
@@ -103,7 +107,7 @@ class NavMenu extends Component {
                         </NavItem>
                     </GridItem>
                 </NavBox>
-                <Burger onClick={this.handleOpenMenu}>
+                <Burger open={open} onClick={this.handleOpenMenu}>
                     <FontAwesomeIcon icon="bars" />
                 </Burger>
 
