@@ -22,12 +22,13 @@ const NavItem = styled.div`
 `;
 
 const NavBox = styled.div`
-    ${NavItem} {
+    ${NavItem}, ${Close} {
         opacity: ${({ open }) => (open ? "1" : "0")};
         transform: ${({ open }) =>
             open ? "translateY(0)" : "translateY(1rem)"};
         transition: opacity 0.4s 0.4s, transform 0.4s 0.4s;
     }
+
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     z-index: ${({ open }) => (open ? "101" : "100")};
@@ -38,7 +39,7 @@ const NavBox = styled.div`
     color: ${({ theme }) => theme.bg};
     transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-100%)")};
     transform-origin: left;
-    transition: transform 0.4s ease, z-index 0s 0.2s;
+    transition: transform 0.4s ease, z-index 0s 0.4s;
     ::before {
         content: "";
         grid-column: 2 / -1;
