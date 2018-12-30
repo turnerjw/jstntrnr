@@ -4,11 +4,12 @@ import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library, config } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import NavMenu from "../components/NavMenu";
 
 library.add(faBars, faTimes);
+config.autoAddCss = false;
 
 const theme = {
     bg: "#F4F4F4",

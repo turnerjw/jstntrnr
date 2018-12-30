@@ -9,7 +9,7 @@ const Close = styled.div`
     z-index: 100;
     margin: 1rem;
     color: ${({ theme }) => theme.bg};
-    font-size: 1.5rem;
+    width: 1.5rem;
     cursor: pointer;
 `;
 
@@ -61,7 +61,7 @@ const Burger = styled.div`
     position: fixed;
     padding: 1rem;
     color: ${({ theme }) => theme.fg};
-    font-size: 1.5rem;
+    width: 1.5rem;
     cursor: pointer;
 `;
 
