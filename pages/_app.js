@@ -4,6 +4,11 @@ import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import NavMenu from "../components/NavMenu";
+
+library.add(faBars, faTimes);
 
 const theme = {
     bg: "#F4F4F4",
@@ -55,6 +60,10 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.2rem;
         font-variation-settings: "wght" 300;
         line-height: 1.5;
+
+        @media (min-width: 1000px){
+            padding-right: 5rem;
+        }
     }
 `;
 
@@ -83,7 +92,9 @@ export default class MyApp extends App {
                 <GlobalStyle />
                 <ParallaxProvider>
                     <ThemeProvider theme={theme}>
-                        <Component {...pageProps} />
+                        <NavMenu>
+                            <Component {...pageProps} />
+                        </NavMenu>
                     </ThemeProvider>
                 </ParallaxProvider>
             </Container>
