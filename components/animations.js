@@ -21,3 +21,25 @@ export const fadeInUp = keyframes`
         transform: translateY(0);
     }
 `;
+
+export const scrollIndicatorAnimation = keyframes`
+0%{
+    transform-origin: bottom;
+    transform: scaleY(0);
+}
+25%{
+    transform-origin: bottom;
+    transform: scaleY(1);
+}
+26%{
+    transform-origin: top;
+}
+50%{
+    transform-origin: top;
+    transform: scaleY(0);
+}
+100%{
+    transform-origin: top;
+    transform: scaleY(0);
+}
+`;
