@@ -9,17 +9,8 @@ import BoldBox from "./BoldBox";
 import Blob from "./Blob";
 import Divider from "./Divider";
 import EntryAnimation from "./EntryAnimation";
-import { fadeInRight, fadeInUp, scrollIndicatorAnimation } from "./animations";
-
-const ScrollIndicator = styled.div`
-    transform: scaleY(0);
-    width: 2px;
-    height: 10rem;
-    background: ${({ theme }) => theme.fg};
-    animation: ${scrollIndicatorAnimation} 2s cubic-bezier(0.77, 0, 0.18, 1)
-        infinite;
-    animation-delay: 2s;
-`;
+import ScrollIndicator from "./ScrollIndicator";
+import { fadeInRight, fadeInUp } from "./animations";
 
 const TestGrid = () => (
     <GridContainer columns="repeat(12, 1fr)" rows="100vh auto">
