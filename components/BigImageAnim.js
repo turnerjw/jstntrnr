@@ -30,6 +30,8 @@ const BigImage = styled.div`
         cubic-bezier(0.23, 1, 0.32, 1);
     img {
         width: 100%;
+        min-height: 25rem;
+        object-fit: cover;
         animation: ${props => (props.isVisible ? zoom : "")} 1s forwards
             ease-out;
     }
