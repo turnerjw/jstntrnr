@@ -5,10 +5,11 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { library, config } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import NavMenu from "../components/NavMenu";
 
-library.add(faBars, faTimes);
+library.add(faBars, faTimes, faEnvelope, faGithub, faLinkedin);
 config.autoAddCss = false;
 
 const theme = {
