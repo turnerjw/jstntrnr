@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GridItem from "./GridItem";
-import GridRow from "./GridRow";
-import EntryAnimation from "./EntryAnimation";
 
 const Close = styled.div`
     z-index: 100;
