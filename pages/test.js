@@ -1,5 +1,3 @@
-import TestGrid from "../components/TestGrid";
-
-const Test = () => <TestGrid />;
+const Test = () => <h1>Test Area</h1>;
 
 export default Test;

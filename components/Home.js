@@ -12,7 +12,7 @@ import EntryAnimation from "./EntryAnimation";
 import ScrollIndicator from "./ScrollIndicator";
 import { fadeInRight, fadeInUp } from "./animations";
 
-const TestGrid = () => (
+const Home = () => (
     <GridContainer columns="repeat(12, 1fr)" rows="100vh auto">
         <GridRow rows="1">
             <GridItem columns="2 / 8" alignSelf="center">
@@ -67,19 +67,17 @@ const TestGrid = () => (
                     working with computers. I like being creative and I like
                     problem solving, so I think software development is a
                     perfect fit for me.
-                </p>
-                <br />
-                <br />
-                <p>
+                    <br />
+                    <br />
                     In 2016, I graduated from Western University with a degree
                     in Software Engineering, and I currently work at SPS
                     Commerce. Most of my projects now are web apps, but I have
                     experience working on a variety of cool things, ranging from
                     embedded systems to machine learning and computer vision
                     (thanks Western!).
+                    <br />
+                    <br />
                 </p>
-                <br />
-                <br />
             </GridItem>
             <GridItem
                 columns="7 / 12"
@@ -227,4 +225,4 @@ const TestGrid = () => (
     </GridContainer>
 );
 
-export default TestGrid;
+export default Home;
