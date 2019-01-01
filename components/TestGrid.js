@@ -64,23 +64,28 @@ const TestGrid = () => (
             </GridItem>
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="12">
                 <h3>
-                    I've always like solving problems, so I guess software
-                    development is a perfect fit.
+                    Software Developer / Music Lover / Gamer / Consumer of BBQ
+                    Foods
                 </h3>
             </GridItem>
             <GridItem columns="2 / 7" smallColumns="2 / 12" rows="13">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vivamus nec ipsum quis quam iaculis blandit. Praesent
-                    sagittis consequat quam nec sollicitudin. Etiam fermentum
-                    varius velit, vel tincidunt tellus ultrices nec. Aliquam
-                    fringilla sollicitudin nunc, vel laoreet erat finibus nec.
-                    Ut tempus nibh at velit mollis hendrerit. Vivamus
-                    scelerisque, orci vitae venenatis vulputate, nisl ex mattis
-                    ex, id tempus libero ex sed massa. Phasellus eget mi ut
-                    augue sollicitudin dapibus non vel nisi. Etiam sodales
-                    feugiat molestie. Vivamus egestas turpis in mi consectetur
-                    pulvinar.
+                    I come from a family of engineers and grew up with the
+                    internet - it shouldn't be a surprise to anybody that I
+                    gravitated towards math and science and chose a career
+                    working with computers. I like being creative and I like
+                    problem solving, so I think software development is a
+                    perfect fit for me.
+                </p>
+                <br />
+                <br />
+                <p>
+                    In 2016, I graduated from Western University with a degree
+                    in Software Engineering, and I currently work at SPS
+                    Commerce. Most of my projects now are web apps, but I have
+                    experience working on a variety of cool things, ranging from
+                    embedded systems to machine learning and computer vision
+                    (thanks Western!).
                 </p>
                 <br />
                 <br />
@@ -88,25 +93,19 @@ const TestGrid = () => (
             <GridItem
                 columns="7 / 12"
                 smallColumns="2 / 12"
-                rows="11 / 14"
+                rows="13"
                 smallRows="14"
             >
                 <p>
-                    Etiam vitae mauris vitae lorem rutrum aliquet. Etiam sapien
-                    tellus, fermentum ac consequat ut, ultricies sit amet
-                    ligula. Quisque dictum, sapien sit amet tincidunt congue,
-                    enim purus sodales ex, mollis accumsan massa dui a leo.
-                    Donec urna ipsum, euismod eu dapibus sit amet, mattis in
-                    sem. Sed metus nunc, sagittis vel diam non, tincidunt
-                    elementum nisi. Pellentesque nunc diam, tempus eget erat
-                    non, maximus vulputate arcu. Pellentesque augue neque,
-                    aliquet sollicitudin arcu et, ullamcorper ornare sem.
-                    Praesent sed porta dolor. Quisque sed blandit diam. Donec
-                    vestibulum volutpat faucibus. Nunc porta lectus ac iaculis
-                    vestibulum. Duis pulvinar dignissim pretium. Quisque laoreet
-                    ullamcorper risus quis finibus. Donec fermentum purus sit
-                    amet consequat suscipit. Quisque dictum dictum mauris, nec
-                    bibendum velit consectetur et.
+                    But enough of that nerd stuff - I also have a passion for
+                    music and graphic design. I have been playing bass for over
+                    10 years, and have even had the opportunity to perform at
+                    Roy Thompson Hall and the 2012 London Olympics with my high
+                    school symphonic band. As for graphic design, I have taught
+                    myself tools like Photoshop and Illustrator through
+                    experimentation (aka not an expert :P), and I like to create
+                    things when I feel inspired. Some examples of my work can be
+                    seen on this page.
                 </p>
             </GridItem>
             <GridItem columns="2" smallColumns="2 / 4" rows="15">
