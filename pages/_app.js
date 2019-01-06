@@ -67,6 +67,56 @@ const GlobalStyle = createGlobalStyle`
             padding-right: 5rem;
         }
     }
+    input, textarea{
+        font-family: "jostvf";
+        font-size: 1rem;
+        box-sizing: border-box;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        border: 1px solid ${theme.fg};
+        background: ${theme.bg};
+        color: ${theme.fg};
+        ::placeholder{
+            font-variation-settings: "wght" 400, "ital" 1;
+        }
+    }
+    textarea{
+        resize: vertical;
+    }
+    button{
+        ::before{
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(
+                to right,
+                ${theme.red},
+                ${theme.yellow}
+            );
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.1s ease;
+        }
+        position: relative;
+        display: inline-block;
+        font-family: "jostvf";
+        font-size: 1rem;
+        box-sizing: border-box;
+        margin: 0.5rem 0;
+        padding: 0.5rem 1.5rem;
+        border: none;
+        background: ${theme.fg};
+        color: ${theme.bg};
+
+        &:hover{
+            ::before{
+                transform: scaleX(1);
+            }
+        }
+    }
 `;
 
 export default class MyApp extends App {

@@ -1,6 +1,18 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import "isomorphic-fetch";
-import GridItem from "./GridItem";
+
+const Form = styled.form`
+    display: flex;
+    fieldset,
+    input,
+    textarea {
+        width: 100%;
+    }
+    textarea {
+        min-height: 5rem;
+    }
+`;
 
 class ContactForm extends Component {
     constructor(props) {
@@ -47,7 +59,7 @@ class ContactForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit}>
                 <fieldset>
                     <label htmlFor="name">
                         <input
@@ -72,8 +84,7 @@ class ContactForm extends Component {
                         />
                     </label>
                     <label htmlFor="email">
-                        <input
-                            type="text"
+                        <textarea
                             id="message"
                             name="message"
                             required
@@ -84,28 +95,9 @@ class ContactForm extends Component {
                     </label>
                     <button type="submit">Send</button>
                 </fieldset>
-            </form>
+            </Form>
         );
     }
 }
-
-// const ContactForm = props => (
-//     <>
-//         <GridItem columns="2 / 5" smallColumns="2 / 12" rows="1">
-//             <h2>Contact</h2>
-//         </GridItem>
-//         <GridItem columns="2 / 5" smallColumns="2 / 12" rows="2">
-//             <h3>
-//                 Let me know how my site isn't perfectly responsive (or just say
-//                 hi)
-//             </h3>
-//         </GridItem>
-//         <GridItem columns="2 / 5" smallColumns="2 / 12" rows="3">
-//             <form />
-//             <input type="text" placeholder="Your email" />
-//             <input type="text" placeholder="Your message" />
-//         </GridItem>
-//     </>
-// );
 
 export default ContactForm;
