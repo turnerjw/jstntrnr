@@ -206,13 +206,13 @@ const Home = () => (
             <GridItem columns="2" smallColumns="2 / 4" rows="50">
                 <Divider />
             </GridItem>
-            <GridItem columns="2 / 5" smallColumns="2 / 12" rows="51">
+            <GridItem columns="4 / 7" smallColumns="2 / 12" rows="51">
                 <h2>Contact</h2>
             </GridItem>
-            <GridItem columns="2 / 5" smallColumns="2 / 12" rows="52">
+            <GridItem columns="4 / 7" smallColumns="2 / 12" rows="52">
                 <h3>Say hi!</h3>
             </GridItem>
-            <GridItem columns="2 / 12" rows="53">
+            <GridItem columns="4 / -4" smallColumns="2 / 12" rows="53">
                 <ContactForm />
             </GridItem>
         </GridRow>
