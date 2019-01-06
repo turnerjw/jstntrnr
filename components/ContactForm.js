@@ -1,16 +1,40 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "isomorphic-fetch";
 
+const spin = keyframes`
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+`;
+
+const Icon = styled.div`
+    height: 1.5rem;
+    width: 1.5rem;
+    //padding: 1rem;
+    animation: ${({ submitting }) => (submitting ? spin : "")} 1s steps(8, end)
+        infinite;
+`;
+
 const Form = styled.form`
-    display: flex;
     fieldset,
     input,
     textarea {
         width: 100%;
     }
+    fieldset {
+        display: flex;
+        flex-direction: column;
+    }
     textarea {
         min-height: 5rem;
+    }
+    button {
+        align-self: flex-end;
     }
 `;
 
@@ -20,6 +44,7 @@ class ContactForm extends Component {
         this.state = {
             submitting: false,
             submitted: false,
+            error: false,
             name: "",
             email: "",
             message: ""
@@ -53,21 +78,32 @@ class ContactForm extends Component {
             },
             body: JSON.stringify(data)
         }).then(res => {
-            res.status === 200 ? this.setState({ submitted: true }) : "";
+            this.setState({ submitting: false });
+            res.status === 200
+                ? this.setState({ submitted: true })
+                : this.setState({ error: true });
         });
     };
 
     render() {
+        const {
+            name,
+            email,
+            message,
+            submitting,
+            submitted,
+            error
+        } = this.state;
         return (
             <Form onSubmit={this.handleSubmit}>
-                <fieldset>
+                <fieldset disabled={submitting || submitted}>
                     <label htmlFor="name">
                         <input
                             type="text"
                             id="name"
                             name="name"
                             required
-                            value={this.state.name}
+                            value={name}
                             onChange={this.handleChange}
                             placeholder="Your name"
                         />
@@ -78,7 +114,7 @@ class ContactForm extends Component {
                             id="email"
                             name="email"
                             required
-                            value={this.state.email}
+                            value={email}
                             onChange={this.handleChange}
                             placeholder="Your email"
                         />
@@ -88,12 +124,25 @@ class ContactForm extends Component {
                             id="message"
                             name="message"
                             required
-                            value={this.state.message}
+                            value={message}
                             onChange={this.handleChange}
                             placeholder="Your message"
                         />
                     </label>
-                    <button type="submit">Send</button>
+                    <button iconVisible={submitting || submitted} type="submit">
+                        {!submitting && !submitted && !error && "Send"}
+                        {submitting && (
+                            <Icon submitting>
+                                <FontAwesomeIcon icon="spinner" />
+                            </Icon>
+                        )}
+                        {submitted && (
+                            <Icon>
+                                <FontAwesomeIcon icon="check" />
+                            </Icon>
+                        )}
+                        {error && "Problem Sending"}
+                    </button>
                 </fieldset>
             </Form>
         );

@@ -5,11 +5,27 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import reset from "styled-reset";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { library, config } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faTimes, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+    faBars,
+    faTimes,
+    faEnvelope,
+    faSpinner,
+    faCheck,
+    faExclamation
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import NavMenu from "../components/NavMenu";
 
-library.add(faBars, faTimes, faEnvelope, faGithub, faLinkedin);
+library.add(
+    faBars,
+    faTimes,
+    faEnvelope,
+    faSpinner,
+    faCheck,
+    faExclamation,
+    faGithub,
+    faLinkedin
+);
 config.autoAddCss = false;
 
 const theme = {
@@ -114,6 +130,11 @@ const GlobalStyle = createGlobalStyle`
         &:hover{
             ::before{
                 transform: scaleX(1);
+            }
+            &:disabled{
+                ::before{
+                    transform: scaleX(0);
+                }
             }
         }
     }
