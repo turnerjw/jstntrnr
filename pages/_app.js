@@ -126,6 +126,7 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         background: ${theme.fg};
         color: ${theme.bg};
+        cursor: pointer;
 
         &:hover{
             ::before{
