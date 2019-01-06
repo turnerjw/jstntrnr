@@ -1,7 +1,6 @@
 import styled, { keyframes, css } from "styled-components";
 import { Parallax } from "react-scroll-parallax";
 import { isMobile } from "react-device-detect";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BigImageAnim from "./BigImageAnim";
 import GridContainer from "./GridContainer";
 import GridItem from "./GridItem";
@@ -11,39 +10,9 @@ import Blob from "./Blob";
 import Divider from "./Divider";
 import EntryAnimation from "./EntryAnimation";
 import ScrollIndicator from "./ScrollIndicator";
+import Footer from "./Footer";
+import ContactForm from "./ContactForm";
 import { fadeInRight, fadeInUp } from "./animations";
-
-const Icon = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 0.75rem;
-    margin: 1rem;
-    background: ${({ theme }) => theme.fg};
-    color: ${({ theme }) => theme.bg};
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s cubic-bezier(0.08, 0.82, 0.17, 1);
-
-    &:hover {
-        transform: scale(1.2);
-    }
-`;
-
-const ContactItem = styled.div`
-    font-size: 1.5rem;
-`;
-
-const Footer = styled.div`
-    margin-top: 5rem;
-    border-top: 1px solid ${({ theme }) => theme.fg};
-    height: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
 
 const Home = () => (
     <GridContainer columns="repeat(12, 1fr)" rows="100vh auto">
@@ -233,38 +202,9 @@ const Home = () => (
                 </Parallax>
             </GridItem>
         </GridRow>
-        <GridRow rows="50">
-            <GridItem columns="2" smallColumns="2 / 4" rows="50">
-                <Divider />
-            </GridItem>
-            <GridItem columns="2 / 5" smallColumns="2 / 12" rows="51">
-                <h2>Contact</h2>
-            </GridItem>
-            <GridItem columns="2 / 5" smallColumns="2 / 12" rows="52">
-                <h3>
-                    Let me know how my site isn't perfectly responsive (or just
-                    say hi)
-                </h3>
-            </GridItem>
-            <GridItem columns="2 / 5" smallColumns="2 / 12" rows="53">
-                <input type="text" placeholder="Your email" />
-                <input type="text" placeholder="Your message" />
-            </GridItem>
-        </GridRow>
         <GridRow rows="100">
             <GridItem columns="2 / 12">
-                <Footer>
-                    <a href="https://github.com/turnerjw">
-                        <Icon>
-                            <FontAwesomeIcon icon={["fab", "github"]} />
-                        </Icon>
-                    </a>
-                    <a href="https://www.linkedin.com/in/justin-turner/">
-                        <Icon>
-                            <FontAwesomeIcon icon={["fab", "linkedin"]} />
-                        </Icon>
-                    </a>
-                </Footer>
+                <Footer />
             </GridItem>
         </GridRow>
     </GridContainer>
