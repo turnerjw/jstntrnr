@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import GridItem from "./GridItem";
 
 const Close = styled.div`
@@ -26,6 +27,36 @@ const Burger = styled.div`
 
 const NavItem = styled.div`
     margin: 2rem 0;
+    position: relative;
+    ::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0.2rem;
+        z-index: -1;
+        width: 100%;
+        height: 1rem;
+        background: linear-gradient(
+            to right,
+            ${({ theme }) => theme.red},
+            ${({ theme }) => theme.yellow}
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s cubic-bezier(1, 0, 0, 1);
+    }
+    &:hover {
+        ::before {
+            transform: scaleX(1);
+        }
+    }
+
+    a {
+        z-index: 102;
+        text-decoration: none;
+        color: ${({ theme }) => theme.bg};
+    }
+
     h1 {
         user-select: none;
         cursor: pointer;
@@ -90,9 +121,13 @@ class NavMenu extends Component {
                     <Close onClick={this.handleCloseMenu}>
                         <FontAwesomeIcon icon="times" />
                     </Close>
-                    <GridItem columns="4 / -1" rows="1" alignSelf="center">
-                        <NavItem>
-                            <h1>Home</h1>
+                    <GridItem columns="4" rows="1" alignSelf="center">
+                        <NavItem onClick={this.handleCloseMenu}>
+                            <Link href="/">
+                                <a>
+                                    <h1>Home</h1>
+                                </a>
+                            </Link>
                         </NavItem>
                         <NavItem>
                             <h1>About</h1>
@@ -100,8 +135,12 @@ class NavMenu extends Component {
                         <NavItem>
                             <h1>Projects</h1>
                         </NavItem>
-                        <NavItem>
-                            <h1>Contact</h1>
+                        <NavItem onClick={this.handleCloseMenu}>
+                            <Link href="/contact">
+                                <a>
+                                    <h1>Contact</h1>
+                                </a>
+                            </Link>
                         </NavItem>
                     </GridItem>
                 </NavBox>
