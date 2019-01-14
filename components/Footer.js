@@ -18,6 +18,10 @@ const Icon = styled.div`
     &:hover {
         transform: scale(1.2);
     }
+
+    svg {
+        width: 1.5rem;
+    }
 `;
 
 const StyledFooter = styled.div`
