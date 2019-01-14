@@ -12,6 +12,7 @@ import EntryAnimation from "./EntryAnimation";
 import ScrollIndicator from "./ScrollIndicator";
 import Footer from "./Footer";
 import ContactForm from "./ContactForm";
+import Skill from "./Skill";
 import { fadeInRight, fadeInUp } from "./animations";
 
 const Home = () => (
@@ -94,9 +95,9 @@ const Home = () => (
                     Roy Thompson Hall and the 2012 London Olympics with my high
                     school symphonic band. As for graphic design, I have taught
                     myself tools like Photoshop and Illustrator through
-                    experimentation (aka not an expert :P), and I like to create
-                    things when I feel inspired. Some examples of my work can be
-                    seen on this page.
+                    experimentation (in other words, I'm not an expert), and I
+                    like to create things when I feel inspired. Some examples of
+                    my work can be seen on this page.
                 </p>
             </GridItem>
             <GridItem columns="2" smallColumns="2 / 4" rows="15">
@@ -131,7 +132,7 @@ const Home = () => (
                 <Divider />
             </GridItem>
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="31">
-                <h2>My Expertise</h2>
+                <h2>My Skills</h2>
             </GridItem>
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="32">
                 <h3>
@@ -139,48 +140,54 @@ const Home = () => (
                     development is a perfect fit.
                 </h3>
             </GridItem>
-            <GridItem columns="2 / 7" smallColumns="2 / 12" rows="33">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vivamus nec ipsum quis quam iaculis blandit. Praesent
-                    sagittis consequat quam nec sollicitudin. Etiam fermentum
-                    varius velit, vel tincidunt tellus ultrices nec. Aliquam
-                    fringilla sollicitudin nunc, vel laoreet erat finibus nec.
-                    Ut tempus nibh at velit mollis hendrerit. Vivamus
-                    scelerisque, orci vitae venenatis vulputate, nisl ex mattis
-                    ex, id tempus libero ex sed massa. Phasellus eget mi ut
-                    augue sollicitudin dapibus non vel nisi. Etiam sodales
-                    feugiat molestie. Vivamus egestas turpis in mi consectetur
-                    pulvinar.
-                </p>
-                <br />
-                <br />
+            <GridItem columns="4 / 10" smallColumns="2 / 12" rows="33">
+                <Skill>
+                    <h2>Web Tech</h2>
+                    <h3>
+                        HTML / Javascript
+                        <br />
+                        CSS / Sass / Less
+                        <br />
+                        React / Next.js / Angular / Node.js / .NET
+                        <br />
+                        REST / GraphQL
+                    </h3>
+                </Skill>
             </GridItem>
-            <GridItem
-                columns="7 / 12"
+
+            <GridItem columns="4 / 10" smallColumns="2 / 12" rows="34">
+                <Skill>
+                    <h2>Database</h2>
+                    <h3>
+                        SQL / NoSQL
+                        <br />
+                        SQL Server / Prisma.io
+                    </h3>
+                </Skill>
+            </GridItem>
+
+            <GridItem columns="4 / 10" smallColumns="2 / 12" rows="35">
+                <Skill>
+                    <h2>CI/CD</h2>
+                    <h3>
+                        Git / JIRA
+                        <br />
+                        Azure Devops / Now
+                    </h3>
+                </Skill>
+            </GridItem>
+
+            {/* <GridItem
+                columns="2 / 6"
                 smallColumns="2 / 12"
-                rows="31 / 34"
-                smallRows="34"
+                rows="35"
+                smallRows="36"
+                alignSelf="center"
+                justifySelf="end"
             >
-                <p>
-                    Etiam vitae mauris vitae lorem rutrum aliquet. Etiam sapien
-                    tellus, fermentum ac consequat ut, ultricies sit amet
-                    ligula. Quisque dictum, sapien sit amet tincidunt congue,
-                    enim purus sodales ex, mollis accumsan massa dui a leo.
-                    Donec urna ipsum, euismod eu dapibus sit amet, mattis in
-                    sem. Sed metus nunc, sagittis vel diam non, tincidunt
-                    elementum nisi. Pellentesque nunc diam, tempus eget erat
-                    non, maximus vulputate arcu. Pellentesque augue neque,
-                    aliquet sollicitudin arcu et, ullamcorper ornare sem.
-                    Praesent sed porta dolor. Quisque sed blandit diam. Donec
-                    vestibulum volutpat faucibus. Nunc porta lectus ac iaculis
-                    vestibulum. Duis pulvinar dignissim pretium. Quisque laoreet
-                    ullamcorper risus quis finibus. Donec fermentum purus sit
-                    amet consequat suscipit. Quisque dictum dictum mauris, nec
-                    bibendum velit consectetur et.
-                </p>
-            </GridItem>
-            <GridItem columns="2" smallColumns="2 / 4" rows="35">
+                <p>It's nice when things run smoothly.</p>
+            </GridItem> */}
+            <GridItem columns="2" smallColumns="2 / 4" rows="39">
                 <Divider />
             </GridItem>
         </GridRow>
@@ -196,8 +203,10 @@ const Home = () => (
             >
                 <Parallax disabled={isMobile} offsetYMax={40} offsetYMin={-40}>
                     <BoldBox>
-                        <h2>Red Pandas</h2>
-                        <h3>They're pretty neat</h3>
+                        <h2>Pixels</h2>
+                        <h3>
+                            I really enjoy the aesthetic of retro video games
+                        </h3>
                     </BoldBox>
                 </Parallax>
             </GridItem>
