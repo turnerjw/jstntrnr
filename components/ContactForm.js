@@ -129,7 +129,7 @@ class ContactForm extends Component {
                             placeholder="Your message"
                         />
                     </label>
-                    <button iconVisible={submitting || submitted} type="submit">
+                    <button type="submit">
                         {!submitting && !submitted && !error && "Send"}
                         {submitting && (
                             <Icon submitting>
