@@ -136,8 +136,8 @@ const Home = () => (
             </GridItem>
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="32">
                 <h3>
-                    I've always like solving problems, so I guess software
-                    development is a perfect fit.
+                    I've always liked solving problems and being creative, so
+                    software development is a perfect fit for me.
                 </h3>
             </GridItem>
             <GridItem columns="4 / 10" smallColumns="2 / 12" rows="33">
@@ -176,17 +176,6 @@ const Home = () => (
                     </h3>
                 </Skill>
             </GridItem>
-
-            {/* <GridItem
-                columns="2 / 6"
-                smallColumns="2 / 12"
-                rows="35"
-                smallRows="36"
-                alignSelf="center"
-                justifySelf="end"
-            >
-                <p>It's nice when things run smoothly.</p>
-            </GridItem> */}
             <GridItem columns="2" smallColumns="2 / 4" rows="39">
                 <Divider />
             </GridItem>
