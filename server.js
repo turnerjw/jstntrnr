@@ -1,10 +1,10 @@
 const express = require("express");
 const next = require("next");
 const bodyParser = require("body-parser");
-require("dotenv").config();
 
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const mailer = require("./mailer");
+
+require("dotenv").config();
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -19,27 +19,7 @@ app.prepare().then(() => {
         return handle(req, res);
     });
 
-    server.post("/api/contact", (req, res) => {
-        const { email = "", name = "", message = "" } = req.body;
-        const msg = {
-            to: "jstnwllmtrnr@gmail.com",
-            from: email,
-            subject: `New message from ${name}`,
-            text: message
-        };
-        console.log(msg);
-
-        sgMail
-            .send(msg)
-            .then(() => {
-                console.log("success");
-                res.send("success");
-            })
-            .catch(error => {
-                console.log("failed", error);
-                res.send("badddd");
-            });
-    });
+    server.post("/api/contact", mailer);
 
     server.listen(3000, err => {
         if (err) throw err;
