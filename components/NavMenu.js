@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Router, { withRouter } from "next/router";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -101,7 +102,40 @@ const NavBox = styled.div`
 class NavMenu extends Component {
     constructor(props) {
         super(props);
-        this.state = { open: false };
+        this.state = {
+            open: false,
+            routeChangeInProgress: false
+        };
+    }
+
+    handleRouteChangeStart = () => {
+        this.setState({
+            routeChangeInProgress: true
+        });
+    };
+
+    handleRouteChangeComplete = () => {
+        this.setState({
+            open: false,
+            routeChangeInProgress: false
+        });
+    };
+
+    componentDidMount() {
+        const { router } = this.props;
+        router.events.on("routeChangeStart", this.handleRouteChangeStart);
+        router.events.on("routeChangeComplete", this.handleRouteChangeComplete);
+        router.events.on("routeChangeError", this.handleRouteChangeComplete);
+    }
+
+    componentWillUnmount() {
+        const { router } = this.props;
+        router.events.off("routeChangeStart", this.handleRouteChangeStart);
+        router.events.off(
+            "routeChangeComplete",
+            this.handleRouteChangeComplete
+        );
+        router.events.off("routeChangeError", this.handleRouteChangeComplete);
     }
 
     handleOpenMenu = () => {
@@ -109,7 +143,8 @@ class NavMenu extends Component {
     };
 
     handleCloseMenu = () => {
-        this.setState({ open: false });
+        const { routeChangeInProgress } = this.props;
+        this.setState({ open: false || routeChangeInProgress });
     };
 
     render() {
@@ -148,4 +183,4 @@ class NavMenu extends Component {
     }
 }
 
-export default NavMenu;
+export default withRouter(NavMenu);
