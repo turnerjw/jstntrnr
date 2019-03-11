@@ -1,7 +1,7 @@
 # jstntrnr.com
 This is a personal website that I can use to introduce myself and show off some of my projects.
 
-Check it out live: www.jstntrnr.com
+Check it out live: jstntrnr.com
 
 ## How it's made
 - This project uses Next.js since it makes routing and server side rendering super easy.
