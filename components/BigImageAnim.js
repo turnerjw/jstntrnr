@@ -4,11 +4,12 @@ import VisibilitySensor from "react-visibility-sensor";
 const BigImage = styled.div`
     perspective: 50rem;
     overflow: hidden;
-    clip-path: ${({ isVisible }) =>
-        isVisible
-            ? "polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
-            : "polygon(0 0, 0 0, 20% 100%, 0% 100%)"};
     transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+
+    /* clip-path: ${({ isVisible }) =>
+        isVisible
+            ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
+            : "polygon(0% 0%, 0% 0%, 20% 100%, 0% 100%)"}; */
 
     img {
         width: 100%;
