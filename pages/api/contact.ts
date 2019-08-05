@@ -1,10 +1,10 @@
-//require("dotenv").config();
+import { NextApiRequest, NextApiResponse } from "next";
 const sgMail = require("@sendgrid/mail");
 console.log(process.env.SENDGRID_API_KEY);
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export default function handle(req, res) {
+export default function handle(req: NextApiRequest, res: NextApiResponse) {
     console.log(req.body);
 
     const { email = "", name = "", message = "" } = req.body;
@@ -20,10 +20,10 @@ export default function handle(req, res) {
         .send(msg)
         .then(() => {
             console.log("success");
-            send(res, 200, "success");
+            res.status(200).end("success");
         })
         .catch(error => {
             console.log("failed", error);
-            send(res, 500, "failed");
+            res.status(500).end("failure");
         });
 }
