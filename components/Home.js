@@ -139,6 +139,9 @@ const Home = () => (
                     I've always liked solving problems and being creative, so
                     software development is a perfect fit for me.
                 </h3>
+                <a href="/static/justin-turner-resume.pdf">
+                    Download my resume
+                </a>
             </GridItem>
             <GridItem columns="4 / 10" smallColumns="2 / 12" rows="33">
                 <Skill>

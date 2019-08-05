@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import App, { Container } from "next/app";
 import Head from "next/head";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
@@ -68,11 +68,16 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.2;
         margin-bottom: 1rem;
     }
-    h3{
+    a, h3{
         font-size: 1rem;
         font-variation-settings: "wght" 500;
         line-height: 1.5;
         margin-bottom: 2rem;
+    }
+    a {
+        color: ${theme.fg};
+        text-decoration: underline;
+        font-size: 1.1rem;
     }
     p{
         font-size: 1.2rem;
