@@ -1,11 +1,7 @@
 {
     "version": 2,
-    "builds": [
-        { "src": "mailer.js", "use": "@now/node" },
-        { "src": "next.config.js", "use": "@now/next" }
-    ],
+    "builds": [{ "src": "next.config.js", "use": "@now/next" }],
     "env": {
         "SENDGRID_API_KEY": "@sendgrid-api-key"
-    },
-    "routes": [{ "src": "/api/contact", "dest": "mailer.js" }]
+    }
 }

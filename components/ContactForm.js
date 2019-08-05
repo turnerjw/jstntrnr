@@ -73,7 +73,7 @@ class ContactForm extends Component {
         fetch("/api/contact", {
             method: "post",
             headers: {
-                Accept: "application/json, text/plain, */*",
+                Accept: "application/json",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data)

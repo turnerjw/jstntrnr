@@ -1,11 +1,13 @@
-require("dotenv").config();
-const { send, json } = require("micro");
-
+//require("dotenv").config();
 const sgMail = require("@sendgrid/mail");
+console.log(process.env.SENDGRID_API_KEY);
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-module.exports = async (req, res) => {
-    const { email = "", name = "", message = "" } = await json(req);
+export default function handle(req, res) {
+    console.log(req.body);
+
+    const { email = "", name = "", message = "" } = req.body;
     const msg = {
         to: "jstnwllmtrnr@gmail.com",
         from: email,
@@ -24,4 +26,4 @@ module.exports = async (req, res) => {
             console.log("failed", error);
             send(res, 500, "failed");
         });
-};
+}
