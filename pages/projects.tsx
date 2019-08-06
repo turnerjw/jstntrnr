@@ -16,6 +16,10 @@ const Projects: NextPage = () => (
             </GridItem>
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="12">
                 <h3>The tally counter from Stanger Things 3</h3>
+                <a href="https://github.com/turnerjw/you-rule-you-suck">
+                    GitHub
+                </a>
+                <br />
                 <a href="https://robins-whiteboard.jstntrnr.com">
                     View it live
                 </a>
@@ -39,6 +43,10 @@ const Projects: NextPage = () => (
             </GridItem>
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="22">
                 <h3>Animated polygons showing Bulbasaur's evolutions</h3>
+                <a href="https://github.com/turnerjw/poly-gallery-demo">
+                    GitHub
+                </a>
+                <br />
                 <a href="https://polysaur.jstntrnr.com">View it live</a>
             </GridItem>
             <GridItem
