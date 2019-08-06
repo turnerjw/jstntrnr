@@ -130,6 +130,13 @@ class NavMenu extends Component {
                             </Link>
                         </NavItem>
                         <NavItem onClick={this.handleCloseMenu}>
+                            <Link href="/projects">
+                                <a>
+                                    <h1>Projects</h1>
+                                </a>
+                            </Link>
+                        </NavItem>
+                        <NavItem onClick={this.handleCloseMenu}>
                             <Link href="/contact">
                                 <a>
                                     <h1>Contact</h1>
