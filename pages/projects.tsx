@@ -7,7 +7,10 @@ const Projects: NextPage = () => (
     <GridContainer columns="repeat(12, 1fr)" rows="1fr auto auto auto 1fr auto">
         <GridRow rows="1">
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="2">
-                <h1 style={{ margin: "10rem 0" }}>Projects</h1>
+                <h1 style={{ marginTop: "10rem" }}>Projects</h1>
+                <h3 style={{ marginBottom: "10rem" }}>
+                    Some of the things I made outside of work
+                </h3>
             </GridItem>
         </GridRow>
         <GridRow rows="10">
