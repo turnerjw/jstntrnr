@@ -18,7 +18,7 @@ const Projects: NextPage = () => (
                 <h2>Robin's Whiteboard</h2>
             </GridItem>
             <GridItem columns="2 / 5" smallColumns="2 / 12" rows="12">
-                <h3>The tally counter from Stanger Things 3</h3>
+                <h3>The tally counter from Stranger Things 3</h3>
                 <a href="https://github.com/turnerjw/you-rule-you-suck">
                     GitHub
                 </a>
